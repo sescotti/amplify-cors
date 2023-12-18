@@ -3,11 +3,15 @@ import React, { useState } from 'react';
 import { Amplify } from "aws-amplify";
 import { signIn } from 'aws-amplify/auth';
 
+const cognitoDomain = '';
+const userPoolId = '';
+const userPoolClientId = '';
+
 Amplify.configure({ Auth: {
   Cognito: {
-    userPoolId: '',
-    userPoolClientId: '',
-    userPoolEndpoint: '',
+    userPoolId: `us-east-1_${userPoolId}`,
+    userPoolClientId: userPoolClientId,
+    userPoolEndpoint: `https://${cognitoDomain}.auth.us-east-1.amazoncognito.com`,
   } }
 });
 
